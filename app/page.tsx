@@ -1,103 +1,130 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex flex-col min-h-screen items-center">
+      <header className="border-b bg-background flex justify-center w-full">
+        <div className="container flex items-center justify-between py-4">
+          <div className="flex items-center gap-2 font-bold text-xl">
+            <span className="text-primary">My</span>
+            <span>Profile</span>
+          </div>
+          <nav className="flex items-center gap-4">
+            <Link href="/sign-in">
+              <Button variant="ghost">Sign In</Button>
+            </Link>
+            <Link href="/sign-up">
+              <Button>Get Started</Button>
+            </Link>
+          </nav>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      <div className="flex-1 container">
+        <section className="py-20 md:py-32 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div className="flex-1 space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Create your <span className="text-primary">shareable</span> professional profile
+            </h1>
+            <p className="text-lg text-muted-foreground md:w-[90%]">
+              Build beautiful profiles to showcase your personal brand, with customizable themes and easy sharing to social platforms.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link href="/sign-up">
+                <Button size="lg" className="rounded-full">
+                  Create Your Profile
+                </Button>
+              </Link>
+              <Link href="/sign-in">
+                <Button size="lg" variant="outline" className="rounded-full">
+                  Sign In
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <div className="flex-1 w-full max-w-md p-4 md:p-8 bg-muted/50 rounded-lg border shadow-sm">
+            <div className="border rounded-lg overflow-hidden shadow-md">
+              <div className="bg-gradient-to-r from-primary/20 to-primary/10 h-32 relative">
+                <div className="absolute -bottom-12 left-4 w-24 h-24 rounded-full bg-background border-4 border-background shadow-md"></div>
+              </div>
+              <div className="pt-16 p-6">
+                <h2 className="text-xl font-bold">Jane Smith</h2>
+                <p className="text-muted-foreground">Product Designer & Illustrator</p>
+                <p className="mt-4">Creating intuitive user experiences and delightful interfaces</p>
+                <div className="flex gap-3 mt-6">
+                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                    <span className="sr-only">Twitter</span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                    <span className="sr-only">LinkedIn</span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                    <span className="sr-only">Instagram</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Features designed for you</h2>
+            <p className="text-muted-foreground text-lg">Everything you need to create your perfect online presence</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-lg border bg-card">
+              <div className="mb-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span className="text-2xl">✨</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Custom Themes</h3>
+              <p className="text-muted-foreground">Choose from multiple themes to match your personal brand and style.</p>
+            </div>
+            <div className="p-6 rounded-lg border bg-card">
+              <div className="mb-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span className="text-2xl">🔗</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Social Links</h3>
+              <p className="text-muted-foreground">Connect all your social media accounts and important links in one place.</p>
+            </div>
+            <div className="p-6 rounded-lg border bg-card">
+              <div className="mb-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span className="text-2xl">🌐</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Custom URL</h3>
+              <p className="text-muted-foreground">Get your own personalized URL that is easy to remember and share.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 border-t">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Ready to create your profile?</h2>
+            <p className="text-lg text-muted-foreground mb-10">Join thousands of professionals showcasing their work and personal brand</p>
+            <Link href="/sign-up">
+              <Button size="lg" className="rounded-full px-8">
+                Get Started For Free
+              </Button>
+            </Link>
+          </div>
+        </section>
+      </div>
+
+      <footer className="border-t py-10">
+        <div className="container">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2 font-bold">
+              <span className="text-primary">My</span>
+              <span>Profile</span>
+            </div>
+            <div className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} MyProfile. All rights reserved.
+            </div>
+          </div>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
